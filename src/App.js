@@ -1,24 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import Card from "./Card";
+import faker from "faker";
 
 function App() {
+  const buttonMarkup = (
+    <div>
+       <button className="button button2">YES</button>
+        <button className="button button3">NO</button> 
+    </div>
+  );
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Card
+        name={faker.name.findName()}
+        imgUrl='https://www.computerhope.com/jargon/j/javascript.png'  
+        designation={faker.name.jobTitle()}
+      >
+       {buttonMarkup}
+      </Card>
+      
     </div>
   );
 }
